@@ -2,7 +2,7 @@
 var number = (prompt("Think of an integer between 1 and 100", ""));
 
 if (number > 0 && number < 101) {
-  var number2 = math.floor(Math.random() * 100 + 1);
+  var number2 = math.floor((Math.random() * 100) + 1);
   var guess = (prompt("Is this number" + number2 + "? Press <, >, or yes "));             
 } else {
   alert("try again!");
