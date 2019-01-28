@@ -10,5 +10,15 @@ alert("Think of an integer between 1 and 100", "");
 var number2 = Math.floor((Math.random() * 100) + 1);
 //alert(number2);
 
-alert("Is this number" + number2 + "? Press <, >, or yes ");             
+var guess = prompt("Is this number" + number2 + "? Press <, >, or yes ");
+
+if (guess == "yes") {
+    txt = "I guessed it right!";
+} else if (guess == "<") {
+    txt = "ah, it's smaller! is it " + number2 + "? ";
+} else if (guess == ">") {
+    txt = "ah, it's bigger!";
+}
+
+alert(txt);
 </script>
