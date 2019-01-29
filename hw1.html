@@ -14,7 +14,7 @@ var guess = prompt("Is this number " + number2 + "? Press <, >, or yes ");
 
 if (guess == "yes") {
     txt = "I got it right. Great!"
-} else if (guess != "yes") {
+} else if (guess !== "yes") {
     while (guess !== "yes") {
         if (guess == "<") {
             guess = prompt("Is this number " + --number2 + "? Press <, >, or yes ");
