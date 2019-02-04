@@ -1,9 +1,30 @@
 <script>
 
-console.log('Hello World') //you need to use F12 to see the message; it won't appear in a reg HTML
+//console.log('Hello World') //you need to use F12 to see the message; it won't appear in a reg HTML
 
-alert('Hello World')
+//alert('Hello World')
 
+//Methods
+//concat
+
+a = 'ABC'
+b = 'YYY'
+c = a + b
+//alert(c)
+
+//a.charAt(_) get a char at a particular index
+//alert(a.charAt(0)) //gives you A
+
+card_number = "5105105105105051"
+first_5 = card_number.substr(0,5) //pulls out the first 5 chars by index
+//alert(first_5)
+
+last_4 = card_number.substr(12,16) //pulls out the last 4 chars by index
+//alert(last_4)
+
+alert(first_5 + "*******" + last_4) //provides first 5 digits followed by stars and then the last four digits; make sure to add quotes
+
+//indexOf()
 
 
 </script>
