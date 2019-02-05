@@ -1,17 +1,19 @@
 <script>
-text = "Hello, World!";
-//alert(text);
-//Upper case: 65 - 90
-//Lower case: 97 - 122
-//space = 32
-//! = 33
-//, = 44
+intext = prompt("Enter text: ")
+shift = parseInt(prompt("Enter shift: "))
+outtext = "Your code is "
 
-for (i = 0; i < text.length; i = i + 1) {
-    //alert(text.charCodeAt(i))
-    code = text.charCodeAt(i)
-    //alert(code)
-    code2 = text.charCodeAt(i) - 5
-    //alert(String.fromCharCode(text1))
+for (i = 0; i < intext.length; i++) {
+        var c = intext[i]
+        var code = intext.charCodeAt(i)
+        if ((code >= 65) && (code <= 90)) { //Uppercase
+            c = String.fromCharCode(((code - 65 + shift) % 26) + 65)
+        } else if ((code >= 97) && (code <= 122)) { //Lowercase
+            c = String.fromCharCode(((code - 97 + shift) % 26) + 97)
+        }
+    
+    outtext += c
 }
+
+alert(outtext)
 </script>
