@@ -1,6 +1,7 @@
 <p>Input:<br><textarea id="input" rows="10" cols="80"></textarea>
 <p><button onclick="process()">Process</button>
 <p>Output:<br><textarea id="output" rows="10" cols="80"></textarea>
+<script src="https://linguatorium.com/tools/static/320/english_words.js"></script>
 
 <script>
 
@@ -9,12 +10,26 @@
     2 For each word:
         2a. If word not in dictionary
             2a1. Output the word
-    3 End   */
+    3 End   
+*/
 
 function process() {
   x = document.getElementById("input").value
   words = x.split(" ")
-  y = JASON.stringify(words)
+  y = "Here are the words that you have misspelled:"
+  for (i = 0; i < words.length; i++) {
+    current_word = words[i]
+    word_misspelled = true
+    for (j = 0; j < english_words.legnth; j++) {
+        if (english_words[j] === current_word) {
+            word_misspelled = false
+        }
+    }
+    if (word_misspelled) {
+        y = y + "\nYou have misspelled word " + current_word
+    }
+  }
+  //y = JSON.stringify(words)
   document.getElementById("output").value = y
 }
 
