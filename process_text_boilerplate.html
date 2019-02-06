@@ -1,0 +1,21 @@
+<p>Input:<br><textarea id="input" rows="10" cols="80"></textarea>
+<p><button onclick="process()">Process</button>
+<p>Output:<br><textarea id="output" rows="10" cols="80"></textarea>
+
+<script>
+
+/*  0 Begin
+    1 Split input into words
+    2 For each word:
+        2a. If word not in dictionary
+            2a1. Output the word
+    3 End   */
+
+function process() {
+  x = document.getElementById("input").value
+  words = x.split(" ")
+  y = JASON.stringify(words)
+  document.getElementById("output").value = y
+}
+
+</script>
