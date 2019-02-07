@@ -7,7 +7,10 @@ for (i = 0; i < intext.length; i++) {
         var c = intext[i]
         var code = intext.charCodeAt(i)
         if ((code >= 65) && (code <= 90)) { //Uppercase
-            c = String.fromCharCode(((code - 65 + shift) % 26) + 65)
+            c = ((code - 65 + shift) % 26)
+            if (c<0) c+=26
+            c+=65
+            c = String.fromCharCode(c)
         } else if ((code >= 97) && (code <= 122)) { //Lowercase
             c = String.fromCharCode(((code - 97 + shift) % 26) + 97)
         }
