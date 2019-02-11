@@ -8,21 +8,18 @@
 <script>
 
 
-//alert(editing_distance('box', 'bxo'))
+alert(editing_distance('ABGAB', 'BGBAB'))
 
 function process() {
   x = document.getElementById("input").value
-  x = x.toLowerCase().replace(/\W+/g, " ") // you don't need to understand this line
+  x = x.toLowerCase().replace(/\W+/g, " ").trim() // you don't need to understand this line
   words = x.split(" ")
   y = ""
-  for (i=0; i<words.length; i++) {
+  for (i=0; i<words.length; i++) { //i are words in text
     current_word = words[i]
-    if (current_word.length == 0) {
-      continue
-    }
     word_misspelled = true
-    for (j=0; j < english_words.length; j++) {
-      if (english_words[j] === current_word) {
+    for (j=0; j < english_words.length; j++) { //j are words in dict
+      if (english_words[j] === current_word) { //== means and === means
         word_misspelled = false
       }
     }
