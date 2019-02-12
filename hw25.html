@@ -1,14 +1,5 @@
-<p>Input:<br><textarea id="input" rows="10" cols="80"></textarea>
-<p><button onclick="process()">Process</button>
-<p>Output:<br><textarea id="output" rows="10" cols="80"></textarea>
 
-<script src="https://linguatorium.com/tools/static/320/english_words.js"></script>
-<script src="https://linguatorium.com/tools/static/320/editing_distance.js"></script>
-  
 <script>
-
-
-alert(editing_distance('ABGAB', 'BGBAB'))
 
 function process() {
   x = document.getElementById("input").value
@@ -18,13 +9,16 @@ function process() {
   for (i=0; i<words.length; i++) { //i are words in text
     current_word = words[i]
     word_misspelled = true
+    //insert 'stones' min ed here//
+    
     for (j=0; j < english_words.length; j++) { //j are words in dict
-      if (english_words[j] === current_word) { //== means and === means
+      if (english_words[j] === current_word) { 
         word_misspelled = false
       }
     }
     if (word_misspelled) {
-      y = y + "You have misspelled the word "+current_word+"\n"
+        suggestion = //based on min editing
+        y = y + "You have misspelled the word "+current_word+", did you mean "+suggestion+"?\n"
     }
   }
   if (y.length == 0) {
@@ -34,3 +28,6 @@ function process() {
 }
 
 </script>
+
+
+  
