@@ -1,13 +1,14 @@
 <script src="https://linguatorium.com/tools/static/320/tau.js"></script>
 <script src="https://linguatorium.com/tools/static/320/grammar.js"></script>
 <script>
-  rule("S --> NP VP")
-  rule("NP --> DET N")
-  rule("VP1 --> V1 NP")
-  rule("VP2 --> V2")
-  rule("N --> boy")
-  rule("N --> ball")
-  rule("V1 --> hit")
+  rule("S --> NP1 VP")
+  rule("NP1 --> DET N1")
+  rule("NP2 --> DET N2")
+  rule("VP --> V1 NP2")
+  rule("VP --> V2")
+  rule("N1 --> boy")
+  rule("N2 --> ball")
+  rule("V1 --> hits")
   rule("V2 --> laughs")
   rule("DET --> the")
   run()
