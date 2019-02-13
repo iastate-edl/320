@@ -3,10 +3,12 @@
 <script>
   rule("S --> NP VP")
   rule("NP --> DET N")
-  rule("VP --> V NP")
+  rule("VP1 --> V1 NP")
+  rule("VP2 --> V2")
   rule("N --> boy")
   rule("N --> ball")
-  rule("V --> hit")
+  rule("V1 --> hit")
+  rule("V2 --> laughs")
   rule("DET --> the")
   run()
 </script>
