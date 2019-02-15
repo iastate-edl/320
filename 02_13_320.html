@@ -26,7 +26,12 @@ e = {f:{g:4}} //inside var e, we have a var f, and inside f, we have g, which ha
 //hw for friday//
 samp_dict = {"hello": "안녕", "thank you":"고맙습니다"}
 
-alert(samp_dict["hello"])
-alert(samp_dict["thank you"])
+//alert(samp_dict["hello"])
+//alert(samp_dict["thank you"])
+
+var word = prompt("please enter word: ")
+if (word in samp_dict) {
+    alert(samp_dict[word])
+}
 
 </script>
