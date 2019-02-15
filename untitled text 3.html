@@ -4,7 +4,7 @@
 
 <script>
 current_word = prompt("type word: ")
-suggestion = english_words[0]
+suggestion = []
 closest = []
 words = current_word.split(" ")
 
@@ -13,12 +13,12 @@ for (i = 0; i < words.length; i++) {
     
     for (k=1; k < english_words.length; k++) {
         if(english_words[k] > current_word) {
-            suggestion = english_words[k]
-            alert(suggestion)
+            suggestion.push(english_words[k])
             closest.push(editing_distance(current_word, suggestion))
         }
     }
     
+    alert(suggestion)
     var min = Math.min.apply(null,closest)
     alert(closest)
     alert(min)
