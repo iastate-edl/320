@@ -4,23 +4,20 @@
 
 <script>
 current_word = prompt("type word: ")
-suggestion = new Array()
+suggestion = english_words[0]
+alert(suggestion)
 words = current_word.split(" ")
 
 for (i = 0; i < words.length; i++) {
     current_word = words[i]
     
     for (k=1; k < english_words.length; k++) {
-        if(english_words[k] > current_word) {
-            suggestion.push(english_words[k])
-            alert(suggestion)
+        if(english_words[k] > suggestion) {
+            suggestion = english_words[k]
             closest = editing_distance(current_word, suggestion)
         }
-    alert(suggestion)
     }
 }
-
-//alert(suggestion)
 
 
 /*
