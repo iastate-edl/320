@@ -1,19 +1,37 @@
-<p>Input:<br><textarea id="input" rows="10" cols="80"></textarea>
-<p><button onclick="process()">Process</button>
-<p>Output:<br><textarea id="output" rows="10" cols="80"></textarea>
-
 <script src="https://linguatorium.com/tools/static/320/english_words.js"></script>
 <script src="https://linguatorium.com/tools/static/320/editing_distance.js"></script>
   
 
 <script>
-suggestion = english_words[0]
+current_word = prompt("type word: ")
+suggestion = new Array()
+words = current_word.split(" ")
+
+for (i = 0; i < words.length; i++) {
+    current_word = words[i]
+    
+    for (k=1; k < english_words.length; k++) {
+        if(english_words[k] > current_word) {
+            suggestion.push(english_words[k])
+            alert(suggestion)
+            closest = editing_distance(current_word, suggestion)
+        }
+    alert(suggestion)
+    }
+}
+
+//alert(suggestion)
+
+
+/*
 for (k=1; k < english_words.length; k++) {
-    if (english_words[k] > corr_word) {
+    if (english_words[k] > current_word) {
+        alert(english_words[k])
         suggestion = english_words[k]
         closest = editing_distance(word_misspelled, suggestion) 
     }
+
 }
-alert(suggestion)
+*/
         
 </script>
