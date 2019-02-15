@@ -3,19 +3,28 @@
 students = [
     {
     netid: "alyrose",
-    name: "Alyssa Jennings",
+    address: "Ms.",
+    fname: "Alyssa", 
+    lname: "Jennings",
     grade: "A+",
     gender: "f"
     },
     {
     netid: "miller3",
-    name: "Daisy Miller",
+    address: "Mr.",
+    fname: "Don", 
+    lname: "Miller",
     grade: "A+",
     gender: "f"
     }
 ]
 
 
-alert(students[0]["name"]) //Alyssa Jennings
-alert(students[0].name) //Alyssa Jennings
+//alert(students[0]["name"]) //Alyssa Jennings
+//alert(students[0].name) //Alyssa Jennings
+
+for (i = 0; i<students.length; i++) {
+    alert("Dear " +students[i].address+ " " +students[i].lname+ ". How are you doing?")
+}
+
 </script>
