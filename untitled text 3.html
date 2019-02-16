@@ -13,16 +13,13 @@ for (i = 0; i < words.length; i++) {
     
     for (k=1; k < english_words.length; k++) {
         if(english_words[k] > current_word) {
-            suggestion.push(english_words[k])
+            suggestion = english_words[k] 
             closest.push(editing_distance(current_word, suggestion))
         }
     }
     
-    alert(suggestion)
-    var min = Math.min.apply(null,closest)
-    alert(closest)
-    alert(min)
-    
 }
+
+alert(closest.sort())
         
 </script>
