@@ -1,0 +1,42 @@
+<script>
+items = [
+    {
+    prompt: 'Americans were the first to land on ___ Moon.',
+    correct: 'the',
+    a: "because there is only one moon, you should use the def article",
+    an: "because you can only use \"an\" in front of a vowel",
+    '': "you need an article with the word \"moon\""
+    }
+]
+for (i = 0; i<items.length; i++) {
+    do {
+        response = prompt(items[i].prompt)
+        if (response === items[i].correct) {
+            alert('correct!')
+        } else if (response === items[i].correct) {
+            alert("Great job, but " + items[i].response + ".")            
+        } else {
+            alert("please enter a, an, the, or just press enter for a zero article")
+        }
+    } while (response !== items[i].correct)
+}
+
+/*
+incorrect = true
+while(incorrect) {
+    response = prompt("Americans were the first to land on ___ Moon.")
+    if (response === 'the') {
+        alert('correct!')
+        incorrect = false
+    } else if (response === 'a'){
+        alert('great job but there is only one Moon so you should use a definite article instead')
+    } else if (response === ""){
+        alert('even though Moon is a proper name, for reasons unknown, you should use an article')
+    } else if (response === 'an'){
+        alert('\'an\' is an indefinite article and it comes only before a vowel')
+    } else {
+        alert("please enter an article")
+    }
+}
+*/
+</script>
