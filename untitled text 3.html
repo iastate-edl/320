@@ -6,36 +6,24 @@
 current_word = prompt("type word: ")
 suggest = "hello"
 closest = editing_distance(current_word, suggest)
-alert(closest)
+wordset = []
+//alert(closest)
+
+
+eng_words = ['a', 'apple', 'banana', 'candy', 'elephant', 'juice', 'xylophone']
 
 if (closest > 0) {
-    for (k=1; k < english_words.length; k++) {
-        if(english_words[k] > current_word) {
-            closest2 = editing_distance(english_words[k], current_word)
-            if (closest2 = 1) {
-                alert("do you mean '" +english_words[k]+ "'? which is based on the min editing dist " +closest2)   
-            }
-        }  
-    }
-}
-
-/*
-words = current_word.split(" ")
-
-for (i = 0; i < words.length; i++) {
-    current_word = words[i]
-    
-    for (k=1; k < english_words.length; k++) {
-        if(english_words[k] > current_word) {
-            suggestion = english_words[k] 
-            alert(suggestion)
-            closest(editing_distance(current_word, suggestion))
-            alert(closest)
+    for (k=0; k < eng_words.length; k++) {
+        if(eng_words[k] > current_word) {
+            //alert(eng_words[k])
+            wordset.push(eng_words[k])
         }
-    }
-    
+    }  
 }
-
-*/
+alert(wordset)
+for (i = 0; i < wordset.length; i++) {
+    suggestion = wordset[i]
+    closest1 = editing_distance(suggestion, current_word))
+}
         
 </script>
