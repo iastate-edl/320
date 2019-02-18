@@ -15,7 +15,7 @@ eng_words = ['a', 'apple', 'banana', 'candy', 'elephant', 'juice', 'xylophone']
 
 if (closest > 0) {
     for (k=0; k < eng_words.length; k++) {
-        if(eng_words[k] >= current_word) {
+        if(eng_words[k] > current_word) {
             //alert(eng_words[k])
             keys.push(eng_words[k])
         }
