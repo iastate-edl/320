@@ -2,11 +2,25 @@
 <p><button onclick="process()">Process</button>
 <p>Output:<br><textarea id="output" rows="10" cols="80"></textarea>
 
+<script src="https://linguatorium.com/tools/static/320/tau.js"></script>
+<script src="https://linguatorium.com/tools/static/320/grammar.js"></script>
+
 <script>
 
 function process() {
   x = document.getElementById("input").value
   y = x.toLowerCase()
+  rule("S --> NP1 VP")
+  rule("NP1 --> DET N1")
+  rule("NP2 --> DET N2")
+  rule("VP --> V1 NP2")
+  rule("VP --> V2")
+  rule("N1 --> boy")
+  rule("N2 --> ball")
+  rule("V1 --> hits")
+  rule("V2 --> laughs")
+  rule("DET --> the")
+  run() //how do you put this in the output?
   document.getElementById("output").value = y
 }
 
