@@ -1,0 +1,68 @@
+<p>Input:<br><textarea id="input" rows="10" cols="100"></textarea>
+<p><button onclick="process()">Process</button>
+<p>Output:<br><textarea id="output" rows="10" cols="100"></textarea>
+
+<script src="https://linguatorium.com/tools/static/320/english_words.js"></script>
+<script src="https://linguatorium.com/tools/static/320/editing_distance.js"></script>
+
+<script>
+//eng_words = ['a', 'apple', 'banana', 'candy', 'dog', 'elephant', 'fish', 'juice', 'xylophone', 'zebra'] //I had trouble using the linguatorium dictionary so I created a mini dictionary to see if I can test it on a few words...as long as the words are similar to these, they work.
+
+eng_words = english_words
+
+keys = []
+values = []
+
+function process() {
+  x = document.getElementById("input").value
+  x = x.toLowerCase().replace(/\W+/g, " ").trim() // you don't need to understand this line
+  words = x.split(" ")
+  y = ""
+  
+  for (i=0; i<words.length; i++) { //i are words in text {
+    current_word = words[i]
+    word_misspelled = true
+
+    for (j=0; j < eng_words.length; j++) { //j are words in dict
+        if (eng_words[j] === current_word) { 
+            word_misspelled = false
+        }
+        if (eng_words[j] > current_word || eng_words[j] < current_word) {
+            keys.push(eng_words[j])
+        }
+    
+    }
+    console.log(keys)
+    if (word_misspelled) {
+        for (i = 0; i < keys.length; i++) {
+            suggestion = keys[i]
+            values.push(editing_distance(suggestion, current_word))
+        }
+        
+        var result = {}
+        keys.forEach((key, i) => result[key] = values[i])
+        //alert(JSON.stringify(result))
+        
+        let arr = Object.values(result)
+        let min = arr[0]
+        for (i=1; i<arr.length; i++) if (arr[i] < min) min = arr[i];
+        
+        function getKeyByValue (obj, value) {
+        return Object.keys(obj).find(key => obj[key] === value)
+        }
+        
+        suggested = getKeyByValue(result, min)
+        
+        y = y + "You have misspelled the word " +current_word+ ". Do you mean " +suggested+ "?"
+    }
+    
+    if (y.length == 0) {
+        y = "No words in your text have been misspelled"
+    }
+}
+  document.getElementById("output").value = y
+}
+</script>
+
+
+  
