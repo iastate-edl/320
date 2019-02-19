@@ -9,18 +9,23 @@
 
 function process() {
   x = document.getElementById("input").value
-  y = x.toLowerCase()
-  rule("S --> NP1 VP")
-  rule("NP1 --> DET N1")
-  rule("NP2 --> DET N2")
-  rule("VP --> V1 NP2")
-  rule("VP --> V2")
-  rule("N1 --> boy")
-  rule("N2 --> ball")
-  rule("V1 --> hits")
-  rule("V2 --> laughs")
-  rule("DET --> the")
-  run() //how do you put this in the output?
+  
+  words = x.split(" ")
+  
+  vowels = 'aeiou'
+  
+  for (i = 0; i < words.length; i++) {
+        if (words[i] == 'a' || words[i] == 'an') {
+            if (words[i].charAt(0) == vowels.indexOf(vowels)) {
+                alert('there\'s a vowel!')//vowels
+            } else {
+                alert('there\'s a consonant!)//consonants
+            }
+        }
+  }
+  
+  y = words.join(" ")
+  
   document.getElementById("output").value = y
 }
 
