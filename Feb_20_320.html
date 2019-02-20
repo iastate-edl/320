@@ -1,7 +1,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
+user = prompt("enter sentence # within data: ")
+//alert(user)
   function process(data) {
-    console.log(JSON.stringify(data, null, 4))
+    //alert(JSON.stringify(data.sentences[0].tokens[0].pos))
+    //ask a sentence and then alert displays the pos of 2nd word
+    alert(JSON.stringify(data.sentences[user].tokens[1].pos))
   }
   $.getJSON("https://linguatorium.com/tools/320/parse.pl", { text: "Hello world!" }, process);
 </script>
