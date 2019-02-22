@@ -1,11 +1,19 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-user = prompt("enter sentence # within data: ")
+user = prompt("enter sentence: ")
+x = []
+
+//user1 = prompt("enter token # within sentence: ")
 //alert(user)
   function process(data) {
     //alert(JSON.stringify(data.sentences[0].tokens[0].pos))
     //ask a sentence and then alert displays the pos of 2nd word
-    alert(JSON.stringify(data.sentences[user].tokens[1].pos))
+    //alert(JSON.stringify(data.sentences[0].tokens[1].pos))
+    for (i in data.sentences[0].tokens) {
+        x.push(1,2,3)//(data.sentences[0].tokens[i].word+ " is " +data.sentences[0].tokens[i].pos)
+        alert(x)
+    }
   }
-  $.getJSON("https://linguatorium.com/tools/320/parse.pl", { text: "Hello world!" }, process);
+
+  //$.getJSON("https://linguatorium.com/tools/320/parse.pl", { text: user }, process);
 </script>
