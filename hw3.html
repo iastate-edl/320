@@ -9,23 +9,28 @@
 
 function process() {
   x = document.getElementById("input").value
+
+words = x.split(" ")
+//alert(typeof words)
+y = ""
   
-  words = x.split(" ")
+vowels = 'aeiou'
   
-  vowels = 'aeiou'
-  
-  for (i = 0; i < words.length; i++) {
-        if (words[i] == 'a' || words[i] == 'an') {
-            if (words[i].charAt(0) == vowels.indexOf(vowels)) {
-                alert('there\'s a vowel!')//vowels
-            } else {
-                alert('there\'s a consonant!)//consonants
+for (i = 0; i < words.length; i++) {
+    if (words[i] == 'a' || words[i] == 'an') {
+        if (vowels.indexOf(words[i+1].charAt(0) >= 0)) {
+            //alert('there\'s a vowel!')//vowels
+            if ((words[i] == 'a') && (vowels.indexOf(words[i+1].charAt(0)) >= 0)) {
+                words[i] = 'an'
+            } else if ((words[i] == 'an') && (vowels.indexOf(words[i+1].charAt(0)) <= 0)) {
+                words[i] = 'a'
             }
         }
-  }
+    }
+}
+
   
   y = words.join(" ")
-  
   document.getElementById("output").value = y
 }
 
