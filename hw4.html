@@ -94,11 +94,11 @@ while (learner_model[prepositions[k]] < 5) {
             if (response === question_bank[j].correct) {
                 alert('correct!')
                 learner_model[worst_known_preposition] += 1
-                alert("current score for \"" +worst_known_preposition+ "\" is, " +learner_model[worst_known_preposition])
+                alert("current score for \"" +worst_known_preposition+ "\" is: " +learner_model[worst_known_preposition])
             } else {
                 alert(question_bank[j].incorrect)
                 learner_model[worst_known_preposition] -= 1
-                alert("current score for \"" +worst_known_preposition+ "\" is, " +learner_model[worst_known_preposition])
+                alert("current score for \"" +worst_known_preposition+ "\" is: " +learner_model[worst_known_preposition])
             }
         }
     }  
