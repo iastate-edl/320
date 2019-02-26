@@ -1,3 +1,110 @@
 <script>
+//object with 5 keys and values: keys each prep value is no.
+//bank of questions
+//object { keys = preps, values = [array]}
+
+question_bank = [
+    {
+    prompt: [
+            "She met us __ December.", 
+            "I met him __ September.", 
+            "We met __ fall", 
+            "She has met them __ October.", 
+            "The class meets __ Spring."
+            ],
+    correct: 'in',
+    incorrect: 'hmm...try again'
+    },
+    {
+    prompt: [
+            "The cookie jar is __ the table.", 
+            "The orange is __ the table.", 
+            "The glass of milk is __ the table.", 
+            "The food is __ the table.", 
+            "The drink is __ the table."
+            ],
+    correct: 'on',
+    incorrect: 'oops! this is not right!'
+    },
+    {
+    prompt: [
+            "This book is written __ JK Rowling.", 
+            "This song is composed __ Selena Gomez.", 
+            "This paper is written __ Evgeny.", 
+            "These shoes are made __ Manolo Blahnik.", 
+            "This shirt is designed __ Gucci."
+            ],
+    correct: 'by',
+    incorrect: 'something is not quite right...'
+    },
+    {
+    prompt: [
+            "I went __ his house.", 
+            "I went __ her house.", 
+            "I went __ school.", 
+            "I went __ the restroom.", 
+            "I went __ Starbucks."
+            ],
+    correct: 'to',
+    incorrect: 'ehhh...are you sure???'
+    },
+    {
+    prompt: [
+            "We were __ Disney World last winter.", 
+            "The grad student is __ work.", 
+            "The prof is __ the bus stop.", 
+            "They are __ the party.", 
+            "We are __ home."
+            ],
+    correct: 'at',
+    incorrect: 'something is not quite right...'
+    }
+]
+//alert(question_bank.length)
+//alert(question_bank[1].correct)
+
+learner_model = { //update learner_model
+    'in': 0,   
+    'on': 0,
+    'by': 0,
+    'to': 0,
+    'at': 0
+}
+
+prepositions = ['in', 'on', 'by', 'to', 'at']
+
+for (k = 0; k < prepositions.length; k++) {
+while (learner_model[prepositions[k]] < 5) {
+    worst_known_preposition = prepositions[0]
+    smallest_score = learner_model[worst_known_preposition]
+    
+    for (i = 1; i < prepositions.length; i++) {
+        if (learner_model[prepositions[i]] < smallest_score) {
+            smallest_score = learner_model[prepositions[i]]
+            worst_known_preposition = prepositions[i]
+        }
+    }
+   
+    alert("Worst known preposition is \"" +worst_known_preposition+ "\"")
+    for (j = 0; j < question_bank.length; j++) {
+        if (worst_known_preposition === question_bank[j].correct) {
+            rand = Math.floor(Math.random() * 5)
+            //alert(rand)
+            response = prompt(question_bank[j].prompt[rand])
+            if (response === question_bank[j].correct) {
+                alert('correct!')
+                learner_model[worst_known_preposition] += 1
+                alert("current score for \"" +worst_known_preposition+ "\" is, " +learner_model[worst_known_preposition])
+            } else {
+                alert(question_bank[j].incorrect)
+                learner_model[worst_known_preposition] -= 1
+                alert("current score for \"" +worst_known_preposition+ "\" is, " +learner_model[worst_known_preposition])
+            }
+        }
+    }  
+}
+}
+
+alert('congratulations you have completed the program!')
 
 </script>
