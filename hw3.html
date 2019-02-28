@@ -10,11 +10,12 @@
 function process() {
   x = document.getElementById("input").value
 
-words = x.split(" ")
+  x = x.toLowerCase() 
+  words = x.split(" ")
 //alert(typeof words)
 y = ""
   
-vowels = 'aeiou'
+vowels = 'aeiouAEIOU'
   
 for (i = 0; i < words.length; i++) {
     if (words[i] == 'a' || words[i] == 'an') {
