@@ -1,8 +1,28 @@
+<p>Input:<br><textarea id="input" rows="10" cols="80"></textarea>
+<p><button onclick="process()">Process</button>
+<p>Output:<br><textarea id="output" rows="10" cols="80"></textarea>
+
+
 <script>
 //object with 5 keys and values: keys each prep value is no.
 //bank of questions
 //object { keys = preps, values = [array]}
 
+function process() {
+  x = document.getElementById("input").value
+  x = x.replace(/\W+/g, " ").toLowerCase().trim()
+  
+  words = x.split(" ")
+  counts = {}
+  for (i = 0; i < words.length; i++) {
+    if (!counts[words[i]]) {
+        counts[words[i]] = 1 
+    } else {
+        counts[words[i]]++
+    }
+  }
+
+/*
 question_bank = [
     {
     prompt: [
@@ -106,5 +126,16 @@ while (learner_model[prepositions[k]] < 5) {
 }
 
 alert('congratulations you have completed the program!')
+*/
+
+    //sorted = Object.keys(counts).sort(function(a,b){return counts[b]-counts[a]})
+    //y += sorted
+    
+    y = JSON.stringify(counts, null, 2) // display the object as JSON
+    
+    document.getElementById("output").value = y
+  
+  
+}
 
 </script>
