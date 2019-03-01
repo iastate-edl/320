@@ -1,8 +1,3 @@
-<p>Input:<br><textarea id="input" rows="10" cols="80"></textarea>
-<p><button onclick="process()">Process</button>
-<p>Output:<br><textarea id="output" rows="10" cols="80"></textarea>
-
-
 <script>
 //object with 5 keys and values: keys each prep value is no.
 //bank of questions
@@ -33,8 +28,7 @@ question_bank = [
             "The train got __ very late.", 
             "She works __ publishing."
             ],
-    correct: 'in',
-    incorrect: 'hmm...try again'
+    correct: 'in'
     },
     {
     prompt: [
@@ -44,8 +38,7 @@ question_bank = [
             "The food is __ the coffee table.", 
             "The drink is __ the counter."
             ],
-    correct: 'on',
-    incorrect: 'oops! this is not right!'
+    correct: 'on'
     },
     {
     prompt: [
@@ -55,8 +48,7 @@ question_bank = [
             "These shoes are made __ Manolo Blahnik.", 
             "This shirt is designed __ Gucci."
             ],
-    correct: 'by',
-    incorrect: 'something is not quite right...'
+    correct: 'by'
     },
     {
     prompt: [
@@ -66,8 +58,7 @@ question_bank = [
             "I went __ the restroom.", 
             "I went __ Starbucks."
             ],
-    correct: 'to',
-    incorrect: 'ehhh...are you sure???'
+    correct: 'to'
     },
     {
     prompt: [
@@ -77,8 +68,7 @@ question_bank = [
             "They are __ the party.", 
             "We are __ home."
             ],
-    correct: 'at',
-    incorrect: 'something is not quite right...'
+    correct: 'at'
     }
 ]
 //alert(question_bank.length)
@@ -93,9 +83,8 @@ learner_model = { //update learner_model
 }
 
 prepositions = ['in', 'on', 'by', 'to', 'at']
-
+while(true) {
 for (k = 0; k < prepositions.length; k++) {
-while (learner_model[prepositions[k]] < 5) {
     worst_known_preposition = prepositions[0]
     smallest_score = learner_model[worst_known_preposition]
     
@@ -115,19 +104,16 @@ while (learner_model[prepositions[k]] < 5) {
             if (response === question_bank[j].correct) {
                 alert('correct!')
                 learner_model[worst_known_preposition] += 1
-                alert("current score for \"" +worst_known_preposition+ "\" is: " +learner_model[worst_known_preposition])
+                //alert("current score for \"" +worst_known_preposition+ "\" is: " +learner_model[worst_known_preposition])
             } else {
-                alert(question_bank[j].incorrect)
+                soln = question_bank[j].prompt[rand].replace("__", question_bank[j].correct)
+                alert(soln)
                 learner_model[worst_known_preposition] -= 1
-                alert("current score for \"" +worst_known_preposition+ "\" is: " +learner_model[worst_known_preposition])
+                //alert("current score for \"" +worst_known_preposition+ "\" is: " +learner_model[worst_known_preposition])
+                }
             }
         }
     }  
-}
-}
-
-alert('congratulations you have completed the program!')
-
 /*
     //sorted = Object.keys(counts).sort(function(a,b){return counts[b]-counts[a]})
     //y += sorted
@@ -137,6 +123,9 @@ alert('congratulations you have completed the program!')
     document.getElementById("output").value = y
   
 */  
+    }
 }
+
+process()
 
 </script>
