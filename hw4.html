@@ -98,11 +98,11 @@ for (k = 0; k < prepositions.length; k++) {
     //alert("Worst known preposition is \"" +worst_known_preposition+ "\"")
     for (j = 0; j < question_bank.length; j++) {
         if (worst_known_preposition === question_bank[j].correct) {
-            rand = Math.floor(Math.random() * 5)
+            rand = parseInt(Math.random() * 5)
             //alert(rand)
             response = prompt(question_bank[j].prompt[rand])
             if (response === question_bank[j].correct) {
-                alert('correct!')
+                alert('correct! ' + prompt[rand].replace("__", question_bank[j].correct))
                 learner_model[worst_known_preposition] += 1
                 //alert("current score for \"" +worst_known_preposition+ "\" is: " +learner_model[worst_known_preposition])
             } else {
