@@ -102,7 +102,7 @@ for (k = 0; k < prepositions.length; k++) {
             //alert(rand)
             response = prompt(question_bank[j].prompt[rand])
             if (response === question_bank[j].correct) {
-                alert('Correct! \'' + question_bank[j].prompt[rand].replace("__", question_bank[j].correct) + '\'')
+                alert('Correct!')
                 learner_model[worst_known_preposition] += 1
                 //alert("current score for \"" +worst_known_preposition+ "\" is: " +learner_model[worst_known_preposition])
             } else {
