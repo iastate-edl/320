@@ -1,0 +1,15 @@
+<p>Input:<br><textarea id="input" rows="10" cols="80"></textarea>
+<p><button onclick="process()">Process</button>
+<p>Output:<br><textarea id="output" rows="10" cols="80"></textarea>
+
+<script>
+
+function process() {
+  x = document.getElementById("input").value
+  y = x.toLowerCase()
+  y = x.replace(/ +/g," ") //replacing multiple white spaces with one white space
+  y = x.replace(/\s*\n\s*/g,"") //remove extra white spaces at the beg and at the end of each line
+  document.getElementById("output").value = y
+}
+
+</script>
