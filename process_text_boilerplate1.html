@@ -8,7 +8,7 @@ function process() {
   x = document.getElementById("input").value
   //y = x.toLowerCase()
   y = x.replace(/\s+/g,"\s") //replacing multiple white spaces with one white space
-  y = x.replace(/\s*\n\s*/g,"\n") //remove extra white spaces at the beg and at the end of each line
+  y = x.replace(/\s*|\n\s*/g,"\n") //remove extra white spaces at the beg and at the end of each line
   y = x.replace(/^\s+/g,"")
   document.getElementById("output").value = y
 }
@@ -19,6 +19,7 @@ new_name = name.replace(/(\S+)\s+(\S+)/g, "$2, $1") //switching last name and fi
 alert(new_name)
 */
 
+/*
 word = prompt("Enter word: ")
 new_word = word.replace(/\b([a-zA-Z]+)(o)(r)\b/g, "$1$2u$3")
 alert(new_word)
@@ -27,6 +28,7 @@ alert(new_word)
 word1 = prompt("Enter word again: ")
 new_word1 = word1.replace(/\b([a-zA-Z]+)(er)\b/g, "$1re")
 alert(new_word1)
+*/
 </script>
 
 
