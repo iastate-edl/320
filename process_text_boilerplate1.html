@@ -6,9 +6,9 @@
 
 function process() {
   x = document.getElementById("input").value
-  y = x.toLowerCase()
-  y = x.replace(/ +/g," ") //replacing multiple white spaces with one white space
-  y = x.replace(/\s*\n\s*/g,"") //remove extra white spaces at the beg and at the end of each line
+  //y = x.toLowerCase()
+  //y = x.replace(/\s+/g," ") //replacing multiple white spaces with one white space
+  y = x.replace(/\s*\n\s*/g,"\n") //remove extra white spaces at the beg and at the end of each line
   document.getElementById("output").value = y
 }
 
