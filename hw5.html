@@ -1,15 +1,11 @@
 <script>
 
 response = prompt("enter text: ")
-new_response = response.replace(/([aeiouyAEIOUY]+)/g,"aig$1")
-new_response1 = new_response.replace(/(aige)\b/g,"e") 
-//new_response3 = new_response2.replace(/_/g,"e")
-new_response2 = new_response1.replace(/\b([^aeiouyAEIOUY]+)([^aeiouyAEIOUY]+)\b/g,"aig$1$2")
-//new_response5 = new_response4.replace(/\b([^aeiouyAEIOUY]+)(aigaige)\b/g,"$1aige")
+new_response = response.replace(/([aeiouy]+)/gi,"aig$1")
+new_response1 = new_response.replace(/(aige)\b/gi,"_") 
+new_response2 = new_response1.replace(/\b([^aeiouy]+)(_)\b/gi,"$1aige")
+new_response3 = new_response2.replace(/_/g, "e")
 
-//beautiful
-//baigeautaigifaigul
-
-alert(new_response1)
+alert(new_response3)
 
 </script>
