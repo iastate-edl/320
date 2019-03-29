@@ -1,17 +1,13 @@
 <script>
-
+questions = ["weather", "news", "sports"]
 x = prompt("How are you?")
-
 while(true) {
 if(/\b(good|great|well|fine|awesome|fantastic|alright)\b/i.test(x)){
-    x1 = prompt("I'm glad to hear that. How do you like the weather today?") 
+    x = prompt("I'm glad to hear that. How is the "+questions[parseInt(Math.random()*questions.length)]+ " today?") 
     } else if (/\b(bad|awful)\b/i.test(x)) {
-        x1 = prompt("I'm sorry to hear that. How do you like the weather today?") {
+        x = prompt("I'm sorry to hear that. How is the "+questions[parseInt(Math.random()*questions.length)]+ " today?") 
         } else {
         x = prompt("How are you?")
         }
-        
-    }
 }
-
 </script>
