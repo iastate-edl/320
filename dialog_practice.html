@@ -4,9 +4,13 @@ x = prompt("How are you?")
 
 while(true) {
 if(/\b(good|great|well|fine|awesome|fantastic|alright)\b/i.test(x)){
-    x = prompt("I'm glad to hear that") 
+    x1 = prompt("I'm glad to hear that. How do you like the weather today?") 
     } else if (/\b(bad|awful)\b/i.test(x)) {
-        x = prompt("I'm sorry to hear that")
+        x1 = prompt("I'm sorry to hear that. How do you like the weather today?") {
+        } else {
+        x = prompt("How are you?")
+        }
+        
     }
 }
 
