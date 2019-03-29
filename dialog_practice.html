@@ -3,17 +3,22 @@ questions = ["How is the weather", "How is the news", "How is your sports team d
 
 x = prompt("How are you?")
 
-while(true) {
+while(questions.length > 0) {
 if(/\b(good|ok|great|well|fine|awesome|fantastic|alright|not bad)\b/i.test(x)){
     i = parseInt(Math.random()*questions.length)
     x = prompt("I'm glad to hear that. "+questions[i]+ " today?") 
-    questions = questions.splice(i,1)
+    questions.splice(i,1)
     } else if (/\b(bad|awful|not good|terrible|horrible|so so)\b/i.test(x)) {
         i = parseInt(Math.random()*questions.length)
         x = prompt("I'm sorry to hear that. "+questions[i]+ " today?") 
-        questions = questions.splice(i,1)
+        questions.splice(i,1)
         } else {
         x = prompt("How are you?")
         }
 }
+
+alert("Your haircut is done.")
+
+//change the array of pos/neg responses
+
 </script>
