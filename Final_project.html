@@ -1,3 +1,112 @@
 <script>
+function process() {
 
+question_bank = [
+    {
+    prompt: [
+            "I hadn't seen him __ years.", 
+            "I met him __ September.", 
+            "I read it __ a book.", 
+            "The train got __ very late.", 
+            "She works __ publishing."
+            ],
+    correct: 'in' //create a list of correct answers
+    },
+    {
+    prompt: [
+            "A frying pan is __ the stove.", 
+            "An orange is __ the desk.", 
+            "A glass of milk is __ the nightstand.", 
+            "The food is __ the coffee table.", 
+            "The drink is __ the counter."
+            ],
+    correct: 'on' //create a list of correct answers
+    },
+    {
+    prompt: [
+            "This book is written __ JK Rowling.", 
+            "This song is composed __ Selena Gomez.", 
+            "This paper is written __ Evgeny.", 
+            "These shoes are made __ Manolo Blahnik.", 
+            "This shirt is designed __ Gucci."
+            ],
+    correct: 'by' //create a list of correct answers
+    },
+    {
+    prompt: [
+            "I went __ his house.", 
+            "I went __ her house.", 
+            "I went __ school.", 
+            "I went __ the restroom.", 
+            "I went __ Starbucks."
+            ],
+    correct: 'to' //create a list of correct answers
+    },
+    {
+    prompt: [
+            "We were __ Disney World last winter.", 
+            "The grad student is __ work.", 
+            "The prof is __ the bus stop.", 
+            "They are __ the party.", 
+            "We are __ home."
+            ],
+    correct: 'at' //create a list of correct answers
+    }
+]
+//alert(question_bank.length)
+//alert(question_bank[1].correct)
+
+learner_model = { //update learner_model
+    '1k': 0,   
+    '2k': 0,
+    '3k': 0,
+    '4k': 0,
+    '5k': 0,
+    '6k': 0,
+    '7k': 0,
+    '8k': 0,
+    '9k': 0,
+    '10k': 0,
+    '11k': 0,
+    '12k': 0,
+    '13k': 0,
+    '14k': 0
+}
+
+word_level = ['1k', '2k', '3k', '4k', '6k', '7k', '8k', '9k', '10k', '11k', '12k', '13k', '14k']
+while(true) {
+for (k = 0; k < word_level.length; k++) {
+    worst_known_level = word_level[0]
+    smallest_score = learner_model[worst_known_level]
+    
+    for (i = 1; i < word_level.length; i++) {
+        if (learner_model[word_level[i]] < smallest_score) {
+            smallest_score = learner_model[word_level[i]]
+            worst_known_level = word_level[i]
+        }
+    }
+   
+    //alert("Worst known preposition is \"" +worst_known_preposition+ "\"")
+    for (j = 0; j < question_bank.length; j++) {
+        if (worst_known_level === question_bank[j].correct) {
+            rand = parseInt(Math.random() * 10)
+            //alert(rand)
+            response = prompt(question_bank[j].prompt[rand])
+            if (response === question_bank[j].correct) {
+                alert('Correct!')
+                learner_model[worst_known_level] += 1
+                //alert("current score for \"" +worst_known_preposition+ "\" is: " +learner_model[worst_known_preposition])
+            } else {
+                soln = question_bank[j].prompt[rand].replace("__", question_bank[j].correct)
+                alert('This is not correct, it is, \''+ soln + '\'')
+                learner_model[worst_known_level] -= 1
+                //alert("current score for \"" +worst_known_preposition+ "\" is: " +learner_model[worst_known_preposition])
+                }
+            }
+        }
+    }  
+}
+}
+
+process()
 </script>
