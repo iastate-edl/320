@@ -1,32 +1,54 @@
+//Monday 15th at 9am appt with Evgeny
+//send the code to Evgeny during this week
+
 <script src="top_5000_words.js"></script>
 <script src="pwords.js"></script>
 
 <script>
-
-//alert(top_5000_words)
-//alert(pseudowords)
-
 
 var a = 0
 //alert(a)
 var b = 4999
 //alert(b)
 
+pseudowords = 2/10
+realwords = 8/20
+
+if (Math.random() < 0.2) {
+    var x = do a pseudo word
+    r = prompt("is this a true word " + x + "? ")
+        if (r == "y") {
+            game_over = true
+        }
+} else (Math.random() >= 0.2) {
+    var y = do a real word
+    r = prompt("is this a true word " + y + "? ")
+        if (r == "y") {
+            a = guess + 1
+        }
+        if (r == "n") {
+            b = guess -1
+        }
+}
+
 game_over = false
 
 while (!game_over) {
-    guess = (a + b)/2
-    guess = top_5000_words[parseInt(guess)]
-    r = prompt("Is this a true word: " + guess + "? ")
-    if (r == "y") {
+    guess = (a + b)/2 //stop when the diff is 10, this is the grey area (confidence interval) true vocab size is somewhere between these two words... higher precision (CI, mean, sd) 
+    //guess = top_5000_words[parseInt(guess)]
+    //guess1 = pseudowords[parseInt(Math.random()*pseudowords.length)]
+        r = prompt("Is this a true word: " + guess + "? ")
+        if (r == "y") {
         a = guess + 1
-    }
-    if (top_5000_words[4999] && r == "y") {
-        game_over = true  
-    }
-    if (r == "n") {
+        }
+        if (top_5000_words[4999] && r == 'y') {
+            alert('game over')
+            game_over = true
+        }
+        if (r == "n") {
         b = guess - 1
-    }
+        }
+
 }
 
 alert("I won!")
