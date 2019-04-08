@@ -3,33 +3,32 @@
 
 <script>
 
-alert(top_5000)
-alert(pseudo)
-/*
-var words = pseudowords.concat(top_5000)
-alert(words[0], words[-1])
+//alert(top_5000_words)
+//alert(pseudowords)
 
 
-a = words[0]
-b = words[-1]
+var a = 0
+//alert(a)
+var b = 4999
+//alert(b)
+
 game_over = false
 
 while (!game_over) {
     guess = (a + b)/2
-    guess = parseInt(guess)
-    r = prompt("Is your number " + guess + "? ")
-    if (r == "yes") {
-        game_over = true
-    }
-    if (r == "<") {
-        b = guess - 1
-    }
-    if (r == ">") {
+    guess = top_5000_words[parseInt(guess)]
+    r = prompt("Is this a true word: " + guess + "? ")
+    if (r == "y") {
         a = guess + 1
+    }
+    if (top_5000_words[4999] && r == "y") {
+        game_over = true  
+    }
+    if (r == "n") {
+        b = guess - 1
     }
 }
 
 alert("I won!")
-*/
 
 </script>
