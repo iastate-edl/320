@@ -1,16 +1,16 @@
-//Monday 15th at 9am appt with Evgeny
-//send the code to Evgeny during this week
-
 <script src="top_5000_words.js"></script>
 <script src="pwords.js"></script>
 
 <script>
+//Monday 15th at 9am appt with Evgeny
+//send the code to Evgeny during this week
 
 var a = 0
 //alert(a)
 var b = 4999
 //alert(b)
 
+/*
 pseudowords = 2/10
 realwords = 8/20
 
@@ -30,27 +30,31 @@ if (Math.random() < 0.2) {
             b = guess -1
         }
 }
+*/
 
 game_over = false
 
 while (!game_over) {
-    guess = (a + b)/2 //stop when the diff is 10, this is the grey area (confidence interval) true vocab size is somewhere between these two words... higher precision (CI, mean, sd) 
-    //guess = top_5000_words[parseInt(guess)]
+        //alert(b)
+        //alert(a)
+        //alert(parseInt(b - a))
+        guess = (a + b)/2 //stop when the diff is 10, this is the grey area (confidence interval) true vocab size is somewhere between these two words... higher precision (CI, mean, sd) 
+        word = top_5000_words[parseInt(guess)]
     //guess1 = pseudowords[parseInt(Math.random()*pseudowords.length)]
-        r = prompt("Is this a true word: " + guess + "? ")
+        r = prompt("Is this a true word: " + word + "? ")
         if (r == "y") {
         a = guess + 1
-        }
-        if (top_5000_words[4999] && r == 'y') {
-            alert('game over')
-            game_over = true
         }
         if (r == "n") {
         b = guess - 1
         }
-
+         if (parseInt(b - a) <= 10) {
+        level = parseInt((a + 1 + b + 1)/2) //average
+        level_b = parseInt(b + 1) //Upper Boundary
+        level_a = parseInt(a + 1) //Lower Boundary
+        alert('your avg vocabulary level is ' + level + ' and the range is between ' + level_a + ' and ' + level_b)
+        game_over = true
+        }
 }
-
-alert("I won!")
 
 </script>
