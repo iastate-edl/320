@@ -27,9 +27,12 @@ var b = 4999
 game_over = false
 
 while (!game_over) {
-    if (Math.random() < 0.2) {
+    j = Math.random()
+    alert(j)
+    //alert(j)
+    if (j < 0.2) {
         var x = pseudowords[parseInt(Math.random()*pseudowords.length)]
-        alert(x)
+        //alert(x)
         r = prompt("is this a true word " + x + "? ")
         if (r == "y") {
             k = prompt('This is not a true word! Game over. Would you like to start over?')
@@ -38,7 +41,8 @@ while (!game_over) {
             } else {
             game_over = true
             }
-        } else {
+        }
+    } else {
         //alert(b)
         //alert(a)
         //alert(parseInt(b - a))
@@ -61,6 +65,5 @@ while (!game_over) {
             }
         }
     }
-}
 
 </script>
