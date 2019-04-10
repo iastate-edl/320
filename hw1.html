@@ -11,15 +11,7 @@ var b = 4999
 //alert(b)
 
 /*
-pseudowords = 2/10
-realwords = 8/20
 
-if (Math.random() < 0.2) {
-    var x = do a pseudo word
-    r = prompt("is this a true word " + x + "? ")
-        if (r == "y") {
-            game_over = true
-        }
 } else (Math.random() >= 0.2) {
     var y = do a real word
     r = prompt("is this a true word " + y + "? ")
@@ -35,6 +27,18 @@ if (Math.random() < 0.2) {
 game_over = false
 
 while (!game_over) {
+    if (Math.random() < 0.2) {
+        var x = pseudowords[parseInt(Math.random()*pseudowords.length)]
+        alert(x)
+        r = prompt("is this a true word " + x + "? ")
+        if (r == "y") {
+            k = prompt('This is not a true word! Game over. Would you like to start over?')
+            if (k == 'y') {
+            continue
+            } else {
+            game_over = true
+            }
+        } else {
         //alert(b)
         //alert(a)
         //alert(parseInt(b - a))
@@ -54,7 +58,9 @@ while (!game_over) {
         level_a = parseInt(a + 1) //Lower Boundary
         alert('your avg vocabulary level is ' + level + ' and the range is between ' + level_a + ' and ' + level_b)
         game_over = true
+            }
         }
+    }
 }
 
 </script>
