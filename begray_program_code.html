@@ -1,0 +1,31 @@
+<script>
+
+name_of_degree = true
+
+while (name_of_degree != false) {
+a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+b = prompt('what is the name of the degree?\n0. PhD\n1. EdD')
+c = prompt('what is the name of the major? Type in manually')
+
+schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+degree = ['PhD', 'EdD']
+
+sch = a.match(/[0-6]/gi)
+a1 = schools[sch]
+
+dgr = b.match(/[0-1]/gi)
+b1 = degree[dgr]
+
+text = ""
+text += a1 + " " + b1 + " " + c + "\n"
+alert(text)
+
+d = prompt('would you like to add more program info?')
+if (d == 'n') {
+    name_of_degree = false
+}
+}
+
+alert(text)
+
+</script>
