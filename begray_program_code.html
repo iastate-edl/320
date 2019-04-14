@@ -1,6 +1,7 @@
 <script>
 
 name_of_degree = true
+arr = []
 
 while (name_of_degree != false) {
 a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
@@ -16,16 +17,297 @@ a1 = schools[sch]
 dgr = b.match(/[0-1]/gi)
 b1 = degree[dgr]
 
-text = ""
-text += a1 + " " + b1 + " " + c + "\n"
-alert(text)
+arr.push("\n"+ a1 + " " + b1 + " " + c)
+alert(arr)
 
-d = prompt('would you like to add more program info?')
+d = prompt('would you like to add more degree info?')
 if (d == 'n') {
     name_of_degree = false
 }
 }
 
-alert(text)
+alert(arr)
 
+/*------------------------------------------------------------*/
+
+name_of_dept = true
+arr1 = []
+
+while (name_of_dept != false) {
+a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+b = prompt('what is the name of the department? Type in manually')
+
+schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+
+sch = a.match(/[0-6]/gi)
+a1 = schools[sch]
+
+arr1.push("\n" + a1 + " " + b)
+alert(arr1)
+
+d = prompt('would you like to add more dept info?')
+if (d == 'n') {
+    name_of_dept= false
+}
+}
+
+alert(arr1)
+
+/*------------------------------------------------------------*/
+
+url = true
+arr2 = []
+
+while (url != false) {
+a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+b = prompt('what is the program url? copy and paste manually')
+
+schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+
+sch = a.match(/[0-6]/gi)
+a1 = schools[sch]
+
+arr2.push("\n" + a1 + " " + b)
+alert(arr2)
+
+d = prompt('would you like to add more program url info?')
+if (d == 'n') {
+    url = false
+}
+}
+
+alert(arr2)
+
+/*------------------------------------------------------------*/
+
+url_pos = true
+arr3 = []
+
+while (url_pos != false) {
+a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+b = prompt('what is the pos url? copy and paste manually')
+
+schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+
+sch = a.match(/[0-6]/gi)
+a1 = schools[sch]
+
+arr3.push("\n" + a1 + " " + b)
+alert(arr3)
+
+d = prompt('would you like to add more pos url info?')
+if (d == 'n') {
+    url_pos = false
+}
+}
+
+alert(arr3)
+
+/*------------------------------------------------------------*/
+
+core_faculty = true
+arr4 = []
+
+while (core_faculty != false) {
+a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+b = prompt('what is the link to the core faculty members? copy and paste manually')
+
+schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+
+sch = a.match(/[0-6]/gi)
+a1 = schools[sch]
+
+arr4.push("\n" + a1 + " " + b)
+alert(arr4)
+
+d = prompt('would you like to add more core faculty info?')
+if (d == 'n') {
+    core_faculty = false
+}
+}
+
+alert(arr4)
+
+/*------------------------------------------------------------*/
+
+num_of_faculty = true
+arr5 = []
+
+while (num_of_faculty != false) {
+a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+b = prompt('How many full time faculty are in this program?')
+c = prompt('How many adjunct faculty are in this program?')
+
+schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+
+sch = a.match(/[0-6]/gi)
+a1 = schools[sch]
+
+arr5.push("\n" + a1 + " " + b + " FT, " + c + " AF")
+alert(arr5)
+
+d = prompt('would you like to add more number of faculty info?')
+if (d == 'n') {
+    num_of_faculty = false
+}
+}
+
+//alert(arr5)
+
+/*------------------------------------------------------------*/
+
+num_of_students = true
+arr6 = []
+
+while (num_of_students != false) {
+a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+b = prompt('How many PhD students are in this program?')
+c = prompt('How many MA students are in this program?')
+
+schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+
+sch = a.match(/[0-6]/gi)
+a1 = schools[sch]
+
+arr6.push("\n" + a1 + " " + b + " PhD, " + c + " MA")
+alert(arr6)
+
+d = prompt('would you like to add more student number info?')
+if (d == 'n') {
+    num_of_students = false
+}
+}
+
+//alert(arr6)
+
+/*------------------------------------------------------------*/
+
+source_for_estm = true
+arr7 = []
+
+while (source_for_estm != false) {
+a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+b = prompt('Copy and paste the current student list page: ')
+
+schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+
+sch = a.match(/[0-6]/gi)
+a1 = schools[sch]
+
+arr7.push("\n" + a1 + " " + b)
+alert(arr7)
+
+d = prompt('would you like to add more source for estimate info?')
+if (d == 'n') {
+    source_for_estm = false
+}
+}
+
+alert(arr7)
+
+/*------------------------------------------------------------*/
+
+faculty_student_ratio = true
+arr8 = []
+
+while (faculty_student_ratio != false) {
+a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+
+schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+
+sch = a.match(/[0-6]/gi) //this gives the index number of the school
+a1 = schools[sch]
+
+b = arr5[sch].match(/\d+/gi)//add faculty
+b1 = Number(b[0]) + Number(b[1])
+
+c = arr6[sch].match(/\d+/gi)//add students
+c1 = Number(c[0]) + Number(c[1])
+
+arr8.push("\n" + a1 + " " + b1 + ":" + c1)
+alert(arr8)
+
+d = prompt('would you like to add more faculty-to-student ratio info?')
+if (d == 'n') {
+    faculty_student_ratio = false
+}
+}
+
+alert(arr8)
+
+/*------------------------------------------------------------*/
+
+assoc_ma = true
+arr9 = []
+
+while (assoc_ma != false) {
+a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+b = prompt('is there an associated degree?\n0. yes\n1. no')
+schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+
+sch = a.match(/[0-6]/gi) //this gives the index number of the school
+a1 = schools[sch]
+
+while(b != 0 || b != 1) {
+    if (b == 0) {
+        b = 'yes'
+        break
+    } else if (b == 1) {
+        b = 'no'
+        break
+    } else {
+        b = prompt('type in a correct choice...0 or 1')
+    }
+}
+
+arr9.push("\n" + a1 + " " + b)
+alert(arr9)
+
+d = prompt('would you like to add more associated MA degree info?')
+if (d == 'n') {
+    assoc_ma = false
+}
+}
+
+alert(arr9)
+
+/*------------------------------------------------------------*/
+
+concurrent_deg = true
+arr10 = []
+
+while (concurrent_deg != false) {
+a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+b = prompt('is there a concurrent degree?\n0. yes\n1. no\n2. unknown')
+
+schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+
+sch = a.match(/[0-6]/gi) //this gives the index number of the school
+a1 = schools[sch]
+
+while(b != 0 || b != 1 || b != 2) {
+    if (b == 0) {
+        b = 'yes'
+        break
+    } else if (b == 1) {
+        b = 'no'
+        break
+    } else if (b == 2) {
+        b = 'unknown'
+        break
+    } else {
+        b = prompt('type in a correct choice...0 or 1 or 2')
+    }
+}
+
+arr10.push("\n" + a1 + " " + b)
+alert(arr10)
+
+d = prompt('would you like to add more concurrent degree info?')
+if (d == 'n') {
+    concurrent_degree = false
+}
+}
+
+alert(arr10)
 </script>
