@@ -4,24 +4,28 @@ name_of_degree = true
 arr = []
 
 while (name_of_degree != false) {
-a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+a = prompt('1. DEGREE INFO. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
 b = prompt('what is the name of the PhD major? Type in manually')
 c = prompt ('what is the name of the MA major? Type in manually')
 
-schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
 
 sch = a.match(/[0-6]/gi)
 a1 = schools[sch]
 
-if (b == 'al' || b == 'AL' || c == 'al' || c == 'AL') {
+if (b == 'al' || b == 'AL') {
     b = 'Applied Linguistics'
-    c = 'Applied Linguistics'
-} else if (b == 'ling' || b == 'Ling' || c == 'ling' || c == 'Ling') {
+} else if (b == 'ling' || b == 'Ling') {
     b = 'Linguistics'
+}
+
+if (c == 'al' || c == 'AL') {
+    c = 'Applied Linguistics'
+} else if (c == 'ling' || c == 'Ling') {
     c = 'Linguistics'
 }
 
-arr.push("\n"+ a1 + " PhD major is, " + b + ", and MA major is, " + c)
+arr.push("\n"+ a1 + ": " + " PhD major is, " + b + ", and MA major is, " + c)
 alert(arr)
 
 d = prompt('would you like to add more degree info?')
@@ -42,15 +46,15 @@ if (start == 'y') {
     start = false
 }
 
-start (start == true) {
+while (start == true) {
 name_of_dept = true
 arr1 = []
 
 while (name_of_dept != false) {
-a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+a = prompt('2. DEPT INFO. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
 b = prompt('what is the name of the department? Type in manually')
 
-schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
 
 sch = a.match(/[0-6]/gi)
 a1 = schools[sch]
@@ -63,7 +67,7 @@ if (b == 'al' || b == 'AL') {
     b = 'English'
 }
 
-arr1.push("\n" + a1 + " " + b)
+arr1.push("\n" + a1 + ": " + " " + b)
 alert(arr1)
 
 d = prompt('would you like to add more dept info?')
@@ -71,25 +75,34 @@ if (d == 'n') {
     name_of_dept= false
 }
 }
-
-alert(arr1)
+start = false
 }
+
+console.log(arr1)
 
 /*------------------------------------------------------------*/
 
+start = prompt('would you like to start the next task?')
+if (start == 'y') {
+    start = true
+} else {
+    start = false
+}
+
+while (start == true) {
 url = true
 arr2 = []
 
 while (url != false) {
-a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+a = prompt('3. PROGRAM URL. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
 b = prompt('what is the program url? copy and paste manually')
 
-schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
 
 sch = a.match(/[0-6]/gi)
 a1 = schools[sch]
 
-arr2.push("\n" + a1 + " " + b)
+arr2.push("\n" + a1 + ": " + " " + b)
 alert(arr2)
 
 d = prompt('would you like to add more program url info?')
@@ -97,24 +110,34 @@ if (d == 'n') {
     url = false
 }
 }
+start = false
+}
 
-alert(arr2)
+console.log(arr2)
 
 /*------------------------------------------------------------*/
 
+start = prompt('would you like to start the next task?')
+if (start == 'y') {
+    start = true
+} else {
+    start = false
+}
+
+while (start == true) {
 url_pos = true
 arr3 = []
 
 while (url_pos != false) {
-a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+a = prompt('4. POS URL. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
 b = prompt('what is the pos url? copy and paste manually')
 
-schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
 
 sch = a.match(/[0-6]/gi)
 a1 = schools[sch]
 
-arr3.push("\n" + a1 + " " + b)
+arr3.push("\n" + a1 + ": " + " " + b)
 alert(arr3)
 
 d = prompt('would you like to add more pos url info?')
@@ -122,24 +145,34 @@ if (d == 'n') {
     url_pos = false
 }
 }
+start = false
+}
 
-alert(arr3)
+console.log(arr3)
 
 /*------------------------------------------------------------*/
 
+start = prompt('would you like to start the next task?')
+if (start == 'y') {
+    start = true
+} else {
+    start = false
+}
+
+while (start == true) {
 core_faculty = true
 arr4 = []
 
 while (core_faculty != false) {
-a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+a = prompt('5. CORE FACULTY INFO. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
 b = prompt('what is the link to the core faculty members? copy and paste manually')
 
-schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
 
 sch = a.match(/[0-6]/gi)
 a1 = schools[sch]
 
-arr4.push("\n" + a1 + " " + b)
+arr4.push("\n" + a1 + ": " + " " + b)
 alert(arr4)
 
 d = prompt('would you like to add more core faculty info?')
@@ -147,25 +180,35 @@ if (d == 'n') {
     core_faculty = false
 }
 }
+start = false
+}
 
-alert(arr4)
+console.log(arr4)
 
 /*------------------------------------------------------------*/
 
+start = prompt('would you like to start the next task?')
+if (start == 'y') {
+    start = true
+} else {
+    start = false
+}
+
+while (start == true) {
 num_of_faculty = true
 arr5 = []
 
 while (num_of_faculty != false) {
-a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+a = prompt('6. NUM OF FACULTY. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
 b = prompt('How many full time faculty are in this program?')
 c = prompt('How many adjunct faculty are in this program?')
 
-schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
 
 sch = a.match(/[0-6]/gi)
 a1 = schools[sch]
 
-arr5.push("\n" + a1 + " " + b + " FT, " + c + " AF")
+arr5.push("\n" + a1 + ": " + " " + b + " FT, " + c + " AF")
 alert(arr5)
 
 d = prompt('would you like to add more number of faculty info?')
@@ -173,25 +216,35 @@ if (d == 'n') {
     num_of_faculty = false
 }
 }
+start = false
+}
 
-//alert(arr5)
+console.log(arr5)
 
 /*------------------------------------------------------------*/
 
+start = prompt('would you like to start the next task?')
+if (start == 'y') {
+    start = true
+} else {
+    start = false
+}
+
+while (start == true) {
 num_of_students = true
 arr6 = []
 
 while (num_of_students != false) {
-a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+a = prompt('7. NUM OF STUDENT. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
 b = prompt('How many PhD students are in this program?')
 c = prompt('How many MA students are in this program?')
 
-schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
 
 sch = a.match(/[0-6]/gi)
 a1 = schools[sch]
 
-arr6.push("\n" + a1 + " " + b + " PhD, " + c + " MA")
+arr6.push("\n" + a1 + ": " + " " + b + " PhD, " + c + " MA")
 alert(arr6)
 
 d = prompt('would you like to add more student number info?')
@@ -199,24 +252,34 @@ if (d == 'n') {
     num_of_students = false
 }
 }
+start = false
+}
 
-//alert(arr6)
+console.log(arr6)
 
 /*------------------------------------------------------------*/
 
+start = prompt('would you like to start the next task?')
+if (start == 'y') {
+    start = true
+} else {
+    start = false
+}
+
+while (start == true) {
 source_for_estm = true
 arr7 = []
 
 while (source_for_estm != false) {
-a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+a = prompt('8. SOURCE FOR ESTM. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
 b = prompt('Copy and paste the current student list page: ')
 
-schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
 
 sch = a.match(/[0-6]/gi)
 a1 = schools[sch]
 
-arr7.push("\n" + a1 + " " + b)
+arr7.push("\n" + a1 + ": " + " " + b)
 alert(arr7)
 
 d = prompt('would you like to add more source for estimate info?')
@@ -224,18 +287,28 @@ if (d == 'n') {
     source_for_estm = false
 }
 }
+start = false
+}
 
-alert(arr7)
+console.log(arr7)
 
 /*------------------------------------------------------------*/
 
+start = prompt('would you like to start the next task?')
+if (start == 'y') {
+    start = true
+} else {
+    start = false
+}
+
+while (start == true) {
 faculty_student_ratio = true
 arr8 = []
 
 while (faculty_student_ratio != false) {
-a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+a = prompt('9. FACULTY-TO-STUDENT RATIO. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
 
-schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
 
 sch = a.match(/[0-6]/gi) //this gives the index number of the school
 a1 = schools[sch]
@@ -246,7 +319,7 @@ b1 = Number(b[0]) + Number(b[1])
 c = arr6[sch].match(/\d+/gi)//add students
 c1 = Number(c[0]) + Number(c[1])
 
-arr8.push("\n" + a1 + " " + b1 + ":" + c1)
+arr8.push("\n" + a1 + ": " + " " + b1 + ":" + c1)
 alert(arr8)
 
 d = prompt('would you like to add more faculty-to-student ratio info?')
@@ -254,18 +327,28 @@ if (d == 'n') {
     faculty_student_ratio = false
 }
 }
+start = false
+}
 
-alert(arr8)
+console.log(arr8)
 
 /*------------------------------------------------------------*/
 
+start = prompt('would you like to start the next task?')
+if (start == 'y') {
+    start = true
+} else {
+    start = false
+}
+
+while (start == true) {
 assoc_ma = true
 arr9 = []
 
 while (assoc_ma != false) {
-a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+a = prompt('10. ASSOCIATED MA DEGREE INFO. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
 b = prompt('is there an associated degree?\n0. yes\n1. no')
-schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
 
 sch = a.match(/[0-6]/gi) //this gives the index number of the school
 a1 = schools[sch]
@@ -282,7 +365,7 @@ while(b != 0 || b != 1) {
     }
 }
 
-arr9.push("\n" + a1 + " " + b)
+arr9.push("\n" + a1 + ": " + " " + b)
 alert(arr9)
 
 d = prompt('would you like to add more associated MA degree info?')
@@ -290,19 +373,29 @@ if (d == 'n') {
     assoc_ma = false
 }
 }
+start = false
+}
 
-alert(arr9)
+console.log(arr9)
 
 /*------------------------------------------------------------*/
 
+start = prompt('would you like to start the next task?')
+if (start == 'y') {
+    start = true
+} else {
+    start = false
+}
+
+while (start == true) {
 concurrent_deg = true
 arr10 = []
 
 while (concurrent_deg != false) {
-a = prompt('which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. PSU\n4. TC\n5. UIUC\n6. GT')
+a = prompt('11. CONCURRENT DEGREE INFO. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
 b = prompt('is there a concurrent degree?\n0. yes\n1. no\n2. unknown')
 
-schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TC', 'UIUC', 'GT']
+schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
 
 sch = a.match(/[0-6]/gi) //this gives the index number of the school
 a1 = schools[sch]
@@ -322,7 +415,7 @@ while(b != 0 || b != 1 || b != 2) {
     }
 }
 
-arr10.push("\n" + a1 + " " + b)
+arr10.push("\n" + a1 + ": " + " " + b)
 alert(arr10)
 
 d = prompt('would you like to add more concurrent degree info?')
@@ -330,6 +423,8 @@ if (d == 'n') {
     concurrent_degree = false
 }
 }
+start = false
+}
 
-alert(arr10)
+console.log(arr10)
 </script>
