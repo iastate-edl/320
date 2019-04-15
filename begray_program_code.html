@@ -186,7 +186,7 @@ start = false
 console.log(arr4)
 
 /*------------------------------------------------------------*/
-/*
+
 start = prompt('would you like to start the next task?')
 if (start == 'y') {
     start = true
@@ -222,7 +222,7 @@ start = false
 console.log(arr5)
 
 /*------------------------------------------------------------*/
-/*
+
 start = prompt('would you like to start the next task?')
 if (start == 'y') {
     start = true
@@ -308,27 +308,79 @@ arr8 = []
 while (faculty_student_ratio != false) {
 a = prompt('9. FACULTY-TO-STUDENT RATIO. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
 
-arr5 = ["MSU: 1, 1", "NAU: 2, 2", "GSU: 3, 3"]
-arr6 = ["MSU: 2, 3", "NAU: NA, NA", "GSU: NA, 8"]
-schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
+//arr5 = ["MSU: 11, 12", "NAU: 2, 2", "GSU: 3, 3", "PSU: 4, 4"]
+//arr6 = ["MSU: 12, 13", "NAU: null, null", "GSU: null, 18", "PSU: 15, null"]
+schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TCO', 'UIU', 'GTN']
 
 sch = a.match(/[0-6]/gi) //this gives the index number of the school
 a1 = schools[sch]
 
-b = arr5[sch].match(/\d+/gi)//add faculty
+b = arr5[sch].replace(/(\D*)(\d+)(\D*)(\d+)(\D*)/gi,'$2 $4')//add faculty
+//alert(b)
+b1 = b.replace(/(\d+) (\d+)/,'$1')
+b2 = b.replace(/(\d+) (\d+)/,'$2')
+//alert(b1)
+//alert(b2)
+b3 = Number(b1) + Number(b2)
 
-b1 = Number(b[0]) + Number(b[1])
-
-
-//c = arr6[sch].replace(/(\D*)(\d)(\D*)(\d)(\D*)/gi,'$2$4')//add students
-
-c = arr6[sch].replace(/(\D*)('NA')(\D*)('NA')(\D*)/gi,'$2$4')
+c = arr6[sch].replace(/(\D+)(\d+)(\D+)(\d+)(\D+)/gi,'$2 $4')//add students
 alert(c)
+//alert(c.indexOf(null))
 
-c1 = Number(c[0]) + Number(c[1])
-//alert(c1)
+var count = (c.match(/null/g) || []).length;
+alert('null count is ' + count);
+//alert('index of null is ' + c.indexOf(null))
 
-arr8.push("\n" + a1 + ": " + " " + b1 + ":" + c1)
+if (count == 0) {
+    c = arr6[sch].replace(/(\D*)(\d+)(\D*)(\d+)(\D*)/gi,'$2 $4')
+    c1 = c.replace(/(\d+) (\d+)/,'$1')
+    c2 = c.replace(/(\d+) (\d+)/,'$2')
+//alert(c)
+alert(c1)
+alert(c2)
+    c3 = Number(c1) + Number(c2)
+}
+
+if (count == 2) {
+    //alert('true!')
+    c = arr6[sch].replace(/(\D*)(null)(\D*)(null)(\D*)/gi,'$2 $4')
+    c = c.replace(/(null) (null)/gi, '0 0')
+    c1 = c.replace(/(0) (0)/,'$1')
+    c2 = c.replace(/(0) (0)/,'$2')
+   //alert(c1)
+   //alert(c2)
+    c3 = Number(c1) + Number(c2)
+}
+
+if (count == 1 && c.indexOf(null) == 5) { //GSU
+    alert('first null is true!')
+    c = arr6[sch].replace(/(\D*)(null)(\D*)(\d+)(\D*)/gi, '$2 $4')
+    c = c.replace(/(null) (\d+)/gi, '0 $2')
+    c1 = c.replace(/(0) (\d+)/,'$1')
+    c2 = c.replace(/(0) (\d+)/,'$2')
+    //alert(c1)
+    //alert(c2)
+    c3 = Number(c1) + Number(c2)
+} else {
+    alert('first null is false!')
+}
+
+
+if (count == 1 && c.indexOf(null) == 9) { //PSU
+    alert('second null is true!')
+    c = arr6[sch].replace(/(\D*)(\d+)(\D*)(null)(\D*)/gi, '$2 $4')
+    c = c.replace(/(\d+) (null)/gi, '$1 0')
+    c1 = c.replace(/(\d+) (0)/,'$1')
+    c2 = c.replace(/(\d+) (0)/,'$2')
+    //alert(c1)
+    //alert(c2)
+    c3 = Number(c1) + Number(c2)
+} else {
+    alert('second null is false!')
+}
+
+
+arr8.push("\n" + a1 + ": " + " " + b3 + ":" + c3)
 alert(arr8)
 
 d = prompt('would you like to add more faculty-to-student ratio info?')
