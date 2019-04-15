@@ -186,7 +186,7 @@ start = false
 console.log(arr4)
 
 /*------------------------------------------------------------*/
-
+/*
 start = prompt('would you like to start the next task?')
 if (start == 'y') {
     start = true
@@ -222,7 +222,7 @@ start = false
 console.log(arr5)
 
 /*------------------------------------------------------------*/
-
+/*
 start = prompt('would you like to start the next task?')
 if (start == 'y') {
     start = true
@@ -308,6 +308,8 @@ arr8 = []
 while (faculty_student_ratio != false) {
 a = prompt('9. FACULTY-TO-STUDENT RATIO. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
 
+arr5 = ["MSU: 1, 1", "NAU: 2, 2", "GSU: 3, 3"]
+arr6 = ["MSU: 2, 3", "NAU: NA, NA", "GSU: NA, 8"]
 schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
 
 sch = a.match(/[0-6]/gi) //this gives the index number of the school
@@ -317,25 +319,16 @@ b = arr5[sch].match(/\d+/gi)//add faculty
 
 b1 = Number(b[0]) + Number(b[1])
 
-c = arr6[sch].match(/\d+/gi)//add students
 
-c1 = arr6[sch].match(/NA/gi)
+//c = arr6[sch].replace(/(\D*)(\d)(\D*)(\d)(\D*)/gi,'$2$4')//add students
+
+c = arr6[sch].replace(/(\D*)('NA')(\D*)('NA')(\D*)/gi,'$2$4')
+alert(c)
+
+c1 = Number(c[0]) + Number(c[1])
 //alert(c1)
-if (c1[0] == 'NA') {
-    c1[0] = 0
-}
 
-if (c1[1] == 'NA') {
-    c1[1] = 0
-}
-
-if (c1[0] >= 0 && c1[1] >= 0) {
-    c2 = Number(c1[0]) + Number(c1[1])
-} else if (c[0] >= 0 && c[1] >= 0) {
-    c2 = Number(c[0]) + Number(c[1])
-}
-
-arr8.push("\n" + a1 + ": " + " " + b1 + ":" + c2)
+arr8.push("\n" + a1 + ": " + " " + b1 + ":" + c1)
 alert(arr8)
 
 d = prompt('would you like to add more faculty-to-student ratio info?')
