@@ -186,7 +186,7 @@ start = false
 console.log(arr4)
 
 /*------------------------------------------------------------*/
-
+/*
 start = prompt('would you like to start the next task?')
 if (start == 'y') {
     start = true
@@ -222,7 +222,7 @@ start = false
 console.log(arr5)
 
 /*------------------------------------------------------------*/
-
+/*
 start = prompt('would you like to start the next task?')
 if (start == 'y') {
     start = true
@@ -293,7 +293,7 @@ start = false
 console.log(arr7)
 
 /*------------------------------------------------------------*/
-
+/*
 start = prompt('would you like to start the next task?')
 if (start == 'y') {
     start = true
@@ -308,8 +308,8 @@ arr8 = []
 while (faculty_student_ratio != false) {
 a = prompt('9. FACULTY-TO-STUDENT RATIO. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
 
-//arr5 = ["MSU: 11 FT, 12 AF", "NAU: 2 FT, 2 AF", "GSU: 3 FT, 3 AF", "PSU: 4 FT, 4 AF"]
-//arr6 = ["MSU: 12 PHD, 13 MA", "NAU: null PHD, null MA", "GSU: null PHD, 18 MA", "PSU: 15 PHD, null MA"]
+arr5 = ["MSU:  9 FT, 0 AF", "NAU:  9 FT, 0 AF", "GSU:  8 FT, 0 AF", "PSU:  17 FT, 0 AF", "TCO:  3 FT, 2 AF", "UIU:  19 FT, 0 AF", "GTN:  20 FT, 3 AF"]
+arr6 = ["MSU:  32 PHD, 23 MA", "NAU:  null PHD, null MA", "GSU:  27 PHD, null MA", "PSU:  29 PHD, 30 MA", "TCO:  11 PHD, 35 MA", "UIU:  94 PHD, null MA", "GTN:  74 PHD, null MA"]
 schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
 
 sch = a.match(/[0-6]/gi) //this gives the index number of the school
@@ -329,7 +329,7 @@ alert(c.indexOf(null))
 
 var count = (c.match(/null/g) || []).length;
 alert('null count is ' + count);
-//alert('index of null is ' + c.indexOf(null))
+alert('index of null is ' + c.indexOf(null))
 
 if (count == 0) {
     c = arr6[sch].replace(/(\D*)(\d+)(\D*)(\d+)(\D*)/gi,'$2 $4')
@@ -352,7 +352,7 @@ if (count == 2) {
     c3 = Number(c1) + Number(c2)
 }
 
-if (count == 1 && c.indexOf(null) == 5) { //GSU
+if (count == 1 && c.indexOf(null) == 6) { //GSU
     alert('first null is true!')
     c = arr6[sch].replace(/(\D*)(null)(\D*)(\d+)(\D*)/gi, '$2 $4')
     c = c.replace(/(null) (\d+)/gi, '0 $2')
@@ -366,7 +366,7 @@ if (count == 1 && c.indexOf(null) == 5) { //GSU
 }
 
 
-if (count == 1 && c.indexOf(null) == 13) { //PSU
+if (count == 1 && c.indexOf(null) == 14) { //PSU
     alert('second null is true!')
     c = arr6[sch].replace(/(\D*)(\d+)(\D*)(null)(\D*)/gi, '$2 $4')
     c = c.replace(/(\d+) (null)/gi, '$1 0')
@@ -394,7 +394,7 @@ start = false
 console.log(arr8)
 
 /*------------------------------------------------------------*/
-
+/*
 start = prompt('would you like to start the next task?')
 if (start == 'y') {
     start = true
@@ -481,7 +481,7 @@ alert(arr10)
 
 d = prompt('would you like to add more concurrent degree info?')
 if (d == 'n') {
-    concurrent_degree = false
+    concurrent_deg = false
 }
 }
 start = false
