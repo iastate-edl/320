@@ -308,8 +308,8 @@ arr8 = []
 while (faculty_student_ratio != false) {
 a = prompt('9. FACULTY-TO-STUDENT RATIO. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
 
-//arr5 = ["MSU: 11, 12", "NAU: 2, 2", "GSU: 3, 3", "PSU: 4, 4"]
-//arr6 = ["MSU: 12, 13", "NAU: null, null", "GSU: null, 18", "PSU: 15, null"]
+arr5 = ["MSU: 11 FT, 12 AF", "NAU: 2 FT, 2 AF", "GSU: 3 FT, 3 AF", "PSU: 4 FT, 4 AF"]
+arr6 = ["MSU: 12 PHD, 13 MA", "NAU: null PHD, null MA", "GSU: null PHD, 18 MA", "PSU: 15 PHD, null MA"]
 schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
 
 sch = a.match(/[0-6]/gi) //this gives the index number of the school
@@ -325,7 +325,7 @@ b3 = Number(b1) + Number(b2)
 
 c = arr6[sch].replace(/(\D+)(\d+)(\D+)(\d+)(\D+)/gi,'$2 $4')//add students
 alert(c)
-//alert(c.indexOf(null))
+alert(c.indexOf(null))
 
 var count = (c.match(/null/g) || []).length;
 alert('null count is ' + count);
@@ -366,7 +366,7 @@ if (count == 1 && c.indexOf(null) == 5) { //GSU
 }
 
 
-if (count == 1 && c.indexOf(null) == 9) { //PSU
+if (count == 1 && c.indexOf(null) == 13) { //PSU
     alert('second null is true!')
     c = arr6[sch].replace(/(\D*)(\d+)(\D*)(null)(\D*)/gi, '$2 $4')
     c = c.replace(/(\d+) (null)/gi, '$1 0')
