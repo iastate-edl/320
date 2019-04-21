@@ -9,10 +9,15 @@
 
 function process() {
   x = document.getElementById("input").value
-
   x = x.toLowerCase() 
   words = x.split(" ")
-//alert(typeof words)
+ /*
+    a = prompt('type your word')
+    a = a.toLowerCase()
+    words = a.split(" ")
+
+ */
+
 y = ""
   
 vowels = 'aeiouAEIOU'
@@ -32,6 +37,7 @@ for (i = 0; i < words.length; i++) {
 
   
   y = words.join(" ")
+  //alert(y)
   document.getElementById("output").value = y
 }
 
