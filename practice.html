@@ -1,0 +1,27 @@
+<script>
+
+a = 0
+b = 100
+
+alert('Think of a number between 0 and 100')
+
+game_over = false
+
+while(game_over = true) {
+
+    guess = (a+b)/2
+
+    input = prompt('is your number ' + guess + '?')
+
+    if(input == '<') {
+        a = a + (guess/2)
+    } else if (input == '>') {
+        b = b - (guess/2)
+    } else if (input == 'y') {
+        game_over = false
+    }
+
+}
+
+
+</script>
