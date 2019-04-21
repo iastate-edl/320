@@ -4,8 +4,9 @@ response = prompt("enter text: ")
 new_response = response.replace(/([aeiouy]+)/gi,"aig$1")
 new_response1 = new_response.replace(/(aige)\b/gi,"_") 
 new_response2 = new_response1.replace(/\b([^aeiouy]+)(_)\b/gi,"$1aige")
-new_response3 = new_response2.replace(/_/g, "e")
+new_response3 = new_response2.replace(/_/g, "aige")
 
 alert(new_response3)
 
 </script>
+
