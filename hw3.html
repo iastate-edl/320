@@ -19,14 +19,14 @@ vowels = 'aeiouAEIOU'
   
 for (i = 0; i < words.length; i++) {
     if (words[i] == 'a' || words[i] == 'an') {
-        if (vowels.indexOf(words[i+1].charAt(0) >= 0)) {
+        //if (vowels.indexOf(words[i+1].charAt(0) >= 0)) {
             //alert('there\'s a vowel!')//vowels
             if ((words[i] == 'a') && (vowels.indexOf(words[i+1].charAt(0)) >= 0)) {
                 words[i] = 'an'
-            } else if ((words[i] == 'an') && (vowels.indexOf(words[i+1].charAt(0)) <= 0)) {
+            } else if ((words[i] == 'an') && (vowels.indexOf(words[i+1].charAt(0)) < 0)) {
                 words[i] = 'a'
             }
-        }
+        //}
     }
 }
 
@@ -36,3 +36,4 @@ for (i = 0; i < words.length; i++) {
 }
 
 </script>
+
