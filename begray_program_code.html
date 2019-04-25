@@ -10,6 +10,7 @@ for (i = 0; i < uni.length; i++) {
 //alert(schools[1])
 
 /*------------------------------------------------------------*/
+/*
 name_of_degree = true
 arr = []
 
@@ -29,6 +30,7 @@ if (b == 'al' || b == 'AL') {
     b = 'Linguistics'
 }
 */
+/*
 if (c == 'al' || c == 'AL') {
     c = 'Applied Linguistics'
 } else if (c == 'CW' || c == 'cw') {
@@ -64,12 +66,12 @@ name_of_dept = true
 arr1 = []
 
 while (name_of_dept != false) {
-a = prompt('2. DEPT INFO. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
-b = prompt('what is the name of the department? Type in manually')
+a = prompt('2. DEPT INFO. which university is this?\n'+schools)
+sch = a.match(/\d/gi)
+b = prompt('what is the name of the department of ' +schools[sch]+ '? Type in manually')
 
-schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
+//schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
 
-sch = a.match(/[0-6]/gi)
 a1 = schools[sch]
 
 if (b == 'al' || b == 'AL') {
@@ -107,12 +109,12 @@ url = true
 arr2 = []
 
 while (url != false) {
-a = prompt('3. PROGRAM URL. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
-b = prompt('what is the program url? copy and paste manually')
+a = prompt('3. PROGRAM URL. which university is this?\n'+schools)
+sch = a.match(/\d/gi)
+b = prompt('what is the program url of ' +schools[sch]+ '? copy and paste manually')
 
-schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
+//schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
 
-sch = a.match(/[0-6]/gi)
 a1 = schools[sch]
 
 arr2.push("\n" + a1 + ": " + " " + b)
@@ -142,12 +144,12 @@ url_pos = true
 arr3 = []
 
 while (url_pos != false) {
-a = prompt('4. POS URL. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
-b = prompt('what is the pos url? copy and paste manually')
+a = prompt('4. POS URL. which university is this?\n'+schools)
+sch = a.match(/\d/gi)
+b = prompt('what is the pos url of ' +schools[sch]+ '? copy and paste manually')
 
-schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
+//schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
 
-sch = a.match(/[0-6]/gi)
 a1 = schools[sch]
 
 arr3.push("\n" + a1 + ": " + " " + b)
@@ -177,12 +179,12 @@ core_faculty = true
 arr4 = []
 
 while (core_faculty != false) {
-a = prompt('5. CORE FACULTY INFO. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
-b = prompt('what is the link to the core faculty members? copy and paste manually')
+a = prompt('5. CORE FACULTY INFO. which university is this?\n'+schools)
+sch = a.match(/\d/gi)
+b = prompt('what is the link to the core faculty members of ' +schools[sch]+ '? copy and paste manually')
 
-schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
+//schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
 
-sch = a.match(/[0-6]/gi)
 a1 = schools[sch]
 
 arr4.push("\n" + a1 + ": " + " " + b)
@@ -199,7 +201,7 @@ start = false
 console.log(arr4)
 
 /*------------------------------------------------------------*/
-/*
+
 start = prompt('would you like to start the next task?')
 if (start == 'y') {
     start = true
@@ -207,18 +209,18 @@ if (start == 'y') {
     start = false
 }
 
+
 while (start == true) {
 num_of_faculty = true
 arr5 = []
 
 while (num_of_faculty != false) {
-a = prompt('6. NUM OF FACULTY. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
-b = prompt('How many full time faculty are in this program?')
+a = prompt('6. NUM OF FACULTY. which university is this?\n'+schools)
+sch = a.match(/\d/gi)
+b = prompt('How many full time faculty are in this program of ' +schools[sch]+ '?')
 c = prompt('How many adjunct faculty are in this program?')
 
-schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TCO', 'UIU', 'GTN']
-
-sch = a.match(/[0-6]/gi)
+//schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TCO', 'UIU', 'GTN']
 a1 = schools[sch]
 
 arr5.push("\n" + a1 + ": " + " " + b + " FT, " + c + " AF")
