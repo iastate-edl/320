@@ -1,31 +1,44 @@
 <script>
-/*
+
+schools = []
+uni = prompt('type university name separated by commas')
+uni = uni.replace(/,/g,'')
+uni = uni.split(" ")
+for (i = 0; i < uni.length; i++) {
+    schools.push(i+". "+uni[i]+"\n")
+}
+//alert(schools[1])
+
+/*------------------------------------------------------------*/
 name_of_degree = true
 arr = []
 
 while (name_of_degree != false) {
-a = prompt('1. DEGREE INFO. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
-b = prompt('what is the name of the PhD major? Type in manually')
-c = prompt ('what is the name of the MA major? Type in manually')
-
-schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
-
-sch = a.match(/[0-6]/gi)
+a = prompt('1. DEGREE INFO. which university is this?\n'+schools)
+//b = prompt('what is the name of the PhD major? Type in manually')
+sch = a.match(/\d/gi)
 a1 = schools[sch]
+c = prompt ('what is the name of the MA major of '+schools[sch]+'? Type in manually')
 
+//schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
+
+/*
 if (b == 'al' || b == 'AL') {
     b = 'Applied Linguistics'
 } else if (b == 'ling' || b == 'Ling') {
     b = 'Linguistics'
 }
-
+*/
 if (c == 'al' || c == 'AL') {
     c = 'Applied Linguistics'
+} else if (c == 'CW' || c == 'cw') {
+    c = 'Creative Writing'
 } else if (c == 'ling' || c == 'Ling') {
     c = 'Linguistics'
 }
 
-arr.push("\n"+ a1 + ": " + " PhD major is, " + b + ", and MA major is, " + c)
+//arr.push("\n"+ a1 + ": " + " PhD major is, " + b + ", and MA major is, " + c)
+arr.push("\n"+ a1 + ": " + "MA major is, " + c)
 alert(arr)
 
 d = prompt('would you like to add more degree info?')
@@ -440,7 +453,7 @@ start = false
 console.log(arr9)
 
 /*------------------------------------------------------------*/
-
+/*
 start = prompt('would you like to start the next task?')
 if (start == 'y') {
     start = true
@@ -488,4 +501,5 @@ start = false
 }
 
 console.log(arr10)
+*/
 </script>
