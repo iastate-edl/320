@@ -7,9 +7,13 @@
 function process() {
   x = document.getElementById("input").value
   y = x.toLowerCase()
-  z = y.search(/\b[a-zA-Z]+\b\n/gi)
+  z = y.replace(/(\w[.?!])(\s|$)/gi, "$1\n")
+  lines = z.split("\n")
+  //for (i = 0; i < lines.length; i++) {
+    //i++
+  //}
   
-  document.getElementById("output").value = z
+  document.getElementById("output").value = lines.length-1
 }
 
 </script>
