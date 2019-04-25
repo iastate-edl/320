@@ -1,5 +1,5 @@
 <script>
-
+/*
 schools = []
 uni = prompt('type university name separated by commas')
 uni = uni.replace(/,/g,'')
@@ -201,7 +201,7 @@ start = false
 console.log(arr4)
 
 /*------------------------------------------------------------*/
-
+/*
 start = prompt('would you like to start the next task?')
 if (start == 'y') {
     start = true
@@ -238,6 +238,7 @@ console.log(arr5)
 
 /*------------------------------------------------------------*/
 /*
+schools = ['0.UoI', '1.UoAT', '2.Colorado', '3.PSU', '4.LSU', '5.NMS', '6.UoMM', '7.FSU', '8.UoNL', '9.UoMinn']
 start = prompt('would you like to start the next task?')
 if (start == 'y') {
     start = true
@@ -250,16 +251,17 @@ num_of_students = true
 arr6 = []
 
 while (num_of_students != false) {
-a = prompt('7. NUM OF STUDENT. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
-b = prompt('How many PhD students are in this program?')
-c = prompt('How many MA students are in this program?')
+a = prompt('7. NUM OF STUDENT. which university is this?\n'+schools)
+sch = a.match(/\d/gi)
+//b = prompt('How many PhD students are in this ' +schools[sch]+ ' program?')
+c = prompt('How many MA students are in this ' +schools[sch]+ ' program?')
 
-schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TCO', 'UIU', 'GTN']
+//schools = ['MSU', 'NAU', 'GSU', 'PSU', 'TCO', 'UIU', 'GTN']
 
-sch = a.match(/[0-6]/gi)
 a1 = schools[sch]
 
-arr6.push("\n" + a1 + ": " + " " + b + " PhD, " + c + " MA")
+arr6.push("\n" + a1 + ": " + " " + c + " MA")
+//arr6.push("\n" + a1 + ": " + " " + b + " PhD, " + c + " MA")
 alert(arr6)
 
 d = prompt('would you like to add more student number info?')
@@ -274,6 +276,7 @@ console.log(arr6)
 
 /*------------------------------------------------------------*/
 /*
+schools = ['0.UoI', '1.UoAT', '2.Colorado', '3.PSU', '4.LSU', '5.NMS', '6.UoMM', '7.FSU', '8.UoNL', '9.UoMinn']
 start = prompt('would you like to start the next task?')
 if (start == 'y') {
     start = true
@@ -286,12 +289,13 @@ source_for_estm = true
 arr7 = []
 
 while (source_for_estm != false) {
-a = prompt('8. SOURCE FOR ESTM. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
-b = prompt('Copy and paste the current student list page: ')
+a = prompt('8. SOURCE FOR ESTM. which university is this?\n'+schools)
+sch = a.match(/\d/gi)
+b = prompt('Copy and paste the current student list page of ' +schools[sch]+ ': ')
 
-schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
+//schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
 
-sch = a.match(/[0-6]/gi)
+
 a1 = schools[sch]
 
 arr7.push("\n" + a1 + ": " + " " + b)
@@ -308,7 +312,7 @@ start = false
 console.log(arr7)
 
 /*------------------------------------------------------------*/
-/*
+schools = ['0.UoI', '1.UoAT', '2.Colorado', '3.PSU', '4.LSU', '5.NMS', '6.UoMM', '7.FSU', '8.UoNL', '9.UoMinn']
 start = prompt('would you like to start the next task?')
 if (start == 'y') {
     start = true
@@ -321,13 +325,13 @@ faculty_student_ratio = true
 arr8 = []
 
 while (faculty_student_ratio != false) {
-a = prompt('9. FACULTY-TO-STUDENT RATIO. which university is this?\n0. MSU\n1. NAU\n2. GSU\n3. Penn State\n4. Teachers College\n5. UIUC\n6. Georgiatown')
+a = prompt('9. FACULTY-TO-STUDENT RATIO. which university is this?\n'+schools)
 
-arr5 = ["MSU:  9 FT, 0 AF", "NAU:  9 FT, 0 AF", "GSU:  8 FT, 0 AF", "PSU:  17 FT, 0 AF", "TCO:  3 FT, 2 AF", "UIU:  19 FT, 0 AF", "GTN:  20 FT, 3 AF"]
-arr6 = ["MSU:  32 PHD, 23 MA", "NAU:  null PHD, null MA", "GSU:  27 PHD, null MA", "PSU:  29 PHD, 30 MA", "TCO:  11 PHD, 35 MA", "UIU:  94 PHD, null MA", "GTN:  74 PHD, null MA"]
-schools = ['MSU', 'NAU', 'GSU', 'Penn State', 'Teachers College', 'UIUC', 'Georgiatown']
+arr5 = ['UoI: 7 FT, 0 AF', 'UoAT: 11 FT, 20 AF', 'Colorado: 13 FT, 0 AF', 'PSU: 8 FT, 0 AF', 'LSU: 9 FT, 0 AF', 'NMS: 27 FT, 30 AF', 'UoMM: 7 FT, 2 AF', 'FSU: 14 FT, 2 AF', 'UoNL: 12 FT, 5 AF', 'UoMinn: 8 FT, 0 AF']
+arr6 = ['UoI: 23 MA', 'UoAT: 71 MA', 'Colorado: null MA', 'PSU: null MA', 'LSU: 14 MA', 'NMS: 20 MA', 'UoMM: 44 MA', 'FSU: 28 MA', 'UoNL: 37 MA', 'UoMinn: 34 MA']
 
-sch = a.match(/[0-6]/gi) //this gives the index number of the school
+
+sch = a.match(/\d/gi) //this gives the index number of the school
 a1 = schools[sch]
 
 b = arr5[sch].replace(/(\D*)(\d+)(\D*)(\d+)(\D*)/gi,'$2 $4')//add faculty
@@ -339,20 +343,20 @@ b2 = b.replace(/(\d+) (\d+)/,'$2')
 b3 = Number(b1) + Number(b2)
 
 c = arr6[sch].replace(/(\D+)(\d+)(\D+)(\d+)(\D+)/gi,'$2 $4')//add students
-alert(c)
-alert(c.indexOf(null))
+//alert(c)
+//alert(c.indexOf(null))
 
 var count = (c.match(/null/g) || []).length;
-alert('null count is ' + count);
-alert('index of null is ' + c.indexOf(null))
+//alert('null count is ' + count);
+//alert('index of null is ' + c.indexOf(null))
 
 if (count == 0) {
     c = arr6[sch].replace(/(\D*)(\d+)(\D*)(\d+)(\D*)/gi,'$2 $4')
     c1 = c.replace(/(\d+) (\d+)/,'$1')
     c2 = c.replace(/(\d+) (\d+)/,'$2')
 //alert(c)
-alert(c1)
-alert(c2)
+//alert(c1)
+//alert(c2)
     c3 = Number(c1) + Number(c2)
 }
 
@@ -377,7 +381,7 @@ if (count == 1 && c.indexOf(null) == 6) { //GSU
     //alert(c2)
     c3 = Number(c1) + Number(c2)
 } else {
-    alert('first null is false!')
+    //alert('first null is false!')
 }
 
 
@@ -391,7 +395,7 @@ if (count == 1 && c.indexOf(null) == 14) { //PSU
     //alert(c2)
     c3 = Number(c1) + Number(c2)
 } else {
-    alert('second null is false!')
+    //alert('second null is false!')
 }
 
 
